@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-BR">
+<meta charset="ISO-8859-1">
+<title>Academia Dev</title>
+</head>
+<body>
+
+	<header>
+		<a href="heade.html" >
+			<img src="./images/Loucademia_Logotipo.png" />
+		</a>
+		<nav>
+			<div>
+				<a href="novoAluno.html"> Novo Aluno </a><br>
+				<a href="pesquisaDeAluno.html"> Pesquisa Aluno </a><br>
+				<a href="controle.html"> Controle de Acesso </a><br>
+				<a href="relatorioEntradaSaida.html"> Relatorio de Entradas e Saidas </a><br>
+				<a href="relatorioSituacao.html"> Relatorios de Situações </a><br>
+			</div>
+		</nav>
+	</header>
+	
+	<main>
+		<h1>Cadastro de Novos Alunos</h1>
+		<div id="infoMessage">
+			<p>Mensagens de Erro</p>
+		</div>
+		<br>
+		<form action="">
+			<fieldset>
+				<legend>
+					Dados Pessoais
+				</legend>
+				
+				<b><label for="nome">Nome:</label></b><br>
+				<input type="text" name="nome" placeholder="Nome do Aluno" id="nome"> <br>
+				
+				<b><label for="sexo">Sexo:</label></b><br>
+				<select id="sexo" nome="sexo">
+					<option selected>:: Selecione o Sexo ::</option>
+					<option value="m">Masculino</option>
+					<option value="f">Feminino</option>
+				</select><br>
+				
+				<b><label for="rg">RG:</label></b><br>
+				<input type="text" name="nome" placeholder="RG do Aluno" id="rg"> <br>
+				
+				<b><label for="dataDeNascimento">Data de Nascimento:</label></b><br>
+				<input type="date" name="dataDeNascimento" id="dataDeNascimento">
+			</fieldset>
+			<br>
+			<fieldset>
+				<legend>
+					Situação do Aluno
+				</legend>
+				
+				<b><label for="situacao">Situação: </label></b><br>
+				<select id="situacao" name="situacao">
+					<option selected>:: Selecione a situacao ::</option>
+					<option value="ativo">Ativo</option>
+					<option value="inativo">Inativo</option>
+					<option value="pendencia">Com pendencia</option>
+				</select><br>
+			</fieldset>
+			<br>
+			<fieldset>
+				<legend>
+					Endereço do Aluno
+				</legend>
+				
+				<b><label for="rua">Rua:</label></b><br>
+				<input type="text" name="rua" placeholder="Rua" id="rua"><br>
+				
+				<b><label for="numero">Número:</label></b><br>
+				<input type="text" name="numero" placeholder="numero" id="numero"><br>
+				
+				<b><label for="complemento">Complemento:</label></b><br>
+				<input type="text" name="complemento" placeholder="complemento" id="complemento"><br>
+				
+				<b><label for="cidade">Cidade:</label></b><br>
+				<input type="text" name="cidade" placeholder="cidade" id="cidade"><br>
+				
+				<b><label for="estado">Estado:</label></b><br>
+				<select id="estado" name="estado">
+					<option selected>:: Selecione o Estado ::</option>
+					<option value="m">Masculino</option>
+					<option value="f">Feminino</option>
+				</select><br>
+				
+				<b><label for="cep">CEP:</label></b><br>
+				<input type="text" name="cep" placeholder="CEP" id="cep">
+				
+			</fieldset>
+			<br>
+			<fieldset>
+				<legend>
+					Contatos do Aluno
+				</legend>
+				
+				<b><label for="email">E-mail:</label></b><br>
+				<input style="width: 16.2%" type="email" name="email" placeholder="E-mail" id="email"><br>
+				
+				<b><label for="dddCelular">Numero Celular:</label></b><br>
+				<input style="width: 30px" type="text" name="dddCelular" placeholder="DDD Celular" id="dddCelular">
+				<input type="tel" name="numeroCelular" placeholder="Numero Celular" id="numeroCelular"><br>
+				
+				<b><label for="dddFixo">Numero Fixo:</label></b><br>
+				<input style="width: 30px" type="text" name="dddFixo" placeholder="DDD Fixo" id="dddFixo">
+				<input type="tel" name="numeroFixo" placeholder="Numero Fixo" id="numeroFixo">
+				
+			</fieldset>
+			
+			<br>
+			
+			<input type="submit" value="Salvar">
+			<input type="button" value="Relatorio de Acessos">
+		</form>
+	</main>
+
+</body>
+</html>
