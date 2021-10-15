@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-BR">
+<meta charset="ISO-8859-1">
+<title>Academia Dev</title>
+</head>
+
+<style>
+table, th, td {
+  border:1px solid black;
+}
+td {
+  text-align:center;
+  vertical-align:middle;
+}
+</style>
+
+<body>
+
+	<header>
+		<img src="./images/Loucademia_Logotipo.png" />
+		<nav>
+			<div>
+				<a href="novoAluno.html"> Novo Aluno </a><br>
+				<a href="pesquisaDeAluno.html"> Pesquisa Aluno </a><br>
+				<a href="controle.html"> Controle de Acesso </a><br>
+				<a href="relatorioEntradaSaida.html"> Relatorio de Entradas e Saidas </a><br>
+				<a href="relatorioSituacao.html"> Relatorios de Situações </a><br>
+			</div>
+		</nav>
+	</header>
+	
+	<h1>Pesquisa de Alunos</h1>
+	<div id="infoMessage">
+		<p>Mensagens de Erro</p>
+	</div>
+	
+	<form action="">
+		<fieldset>
+			<legend>Pesquisar Alunos</legend>
+			
+			<label for="idAluno">ID do Aluno</label> <br>
+			<input type="text" name="idAluno" id="idAluno" placeholder="ID do Aluno"> <br>
+			
+			<label for="nomeAluno">Nome do Aluno</label> <br>
+			<input type="text" name="nomeAluno" id="nomeAluno" placeholder="Nome do Aluno"> <br>
+			
+			<label for="rgAluno">RG do Aluno</label> <br>
+			<input type="text" name="rgAluno" id="rgAluno" placeholder="RG do Aluno"> <br>
+			
+			<label for="telefoneAluno">Telefone do Aluno</label> <br>
+			<input type="text" name="telefoneAluno" id="telefoneAluno" placeholder="Telefone do Aluno"> <br> <br>
+			
+			<input style="width: 100px" type="submit" value="Buscar">
+		</fieldset>
+	</form>
+	
+	<br> <br>
+	<table style="width:100%;">
+		<tr>
+			<th>ID</th>
+			<th>NOME</th>
+			<th>RG</th>
+			<th>E-MAIL</th>
+			<th>SITUAÇÃO</th>
+			<th>AÇÕES</th>
+		</tr>
+
+		<tr>
+			<td>001AC</td>
+			<td>Anisberto dos Reis</td>
+			<td>556545</td>
+			<td>anisberto@gmail.com</td>
+			<td>ATIVO</td>
+			<td>
+				<input type="button" value="Editar">
+				<input type="button" value="Excluir">
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>
