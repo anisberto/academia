@@ -1,11 +1,11 @@
-package br.com.anisberto.academia;
+package br.com.dev.academia;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.faces.annotation.FacesConfig;
 import javax.faces.annotation.FacesConfig.Version;
 
-@FacesConfig(version = Version.JSF_2_3)
 @ApplicationScoped
+@FacesConfig(version = Version.JSF_2_3)
 public class Config {
 
 }
