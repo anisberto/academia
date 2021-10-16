@@ -62,25 +62,26 @@ td {
 				</div>
 			</div>
 	</header>
-
 	<div class="container" style="padding-bottom: 5%">
 		<div class="row">
 			<div class="col-6 col-md-12">
-				<h1>Relatorio de Entradas e Saidas</h1>
+
+				<h1>Relatorio de Situações</h1>
 				<div class="alert alert-danger" id="infoMessage">
-					Mensagens de Erro
+					<p>Mensagens de Erro</p>
 				</div>
 
-				<form action="" class="row g-3 needs-validation">
-					<label for="idAluno">ID do Aluno</label> <br> <input style="width: 30%"
-						class="form-control" type="text" name="idAluno" id="idAluno"
-						placeholder="ID do Aluno"> <br> <label
-						for="dataInicial">Data Incial</label> <br> <input style="width: 30%"
-						class="form-control" type="date" name="dataInicial"
-						id="dataInicial"> <br> <label for="dataFinal">Data
-						Final</label> <br> <input class="form-control" type="date" style="width: 30%"
-						name="dataFinal" id="dataFinal"> <br> <br> <hr>
-						<input class="btn btn-success btn-sm" style="width: 20%" type="submit" value="Gerar Relatorio">
+				<form action="">
+
+					<label for="situacao">Situação do Aluno</label> <br> <select
+						class="form-select" id="situacao" name="situacao">
+						<option selected>:: Selecione a situacao ::</option>
+						<option>ATIVO</option>
+						<option>INATIVO</option>
+						<option>COM PENDENCIAS</option>
+					</select> <input class="btn btn-success btn-sm" style="width: 10rem; margin-top: 2%"
+						type="submit" value="Gerar Relatorio">
+
 				</form>
 
 				<br>
@@ -88,30 +89,33 @@ td {
 					<tr>
 						<th>ID</th>
 						<th>NOME</th>
-						<th>ENTRADA</th>
-						<th>SAIDA</th>
-						<th>DURAÇÃO</th>
+						<th>SITUAÇÃO</th>
+						<th>CELULAR</th>
+						<th>FIXO</th>
+						<th>AÇÕES</th>
 					</tr>
 
 					<tr>
 						<td>001AC</td>
 						<td>Anisberto dos Reis</td>
-						<td>15/10/2021 15:30:10</td>
-						<td>15/10/2021 16:30:10</td>
-						<td>01:00:00</td>
+						<td>ATIVO</td>
+						<td>62 9 9294-7507</td>
+						<td>62 3512-4521</td>
+						<td><input class="btn btn-primary btn-sm" type="button"
+							value="Editar"></td>
 					</tr>
 					<tr>
 						<td>003AR</td>
 						<td>Anisberto dos Reis</td>
-						<td>16/09/2021 15:30:10</td>
-						<td>16/09/2021 16:00:00</td>
-						<td>00:30:00</td>
+						<td>INATIVO</td>
+						<td>62 9 9294-7507</td>
+						<td>62 3512-4521</td>
+						<td><input class="btn btn-primary btn-sm" type="button"
+							value="Editar"></td>
 					</tr>
 				</table>
 			</div>
 		</div>
-	</div>
-
 </body>
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
