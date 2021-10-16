@@ -30,28 +30,22 @@ td {
 		</nav>
 	</header>
 	
-	<h1>Pesquisa de Alunos</h1>
+	<h1>Relatorio de Entradas e Saidas</h1>
 	<div id="infoMessage">
 		<p>Mensagens de Erro</p>
 	</div>
 	
 	<form action="">
 		<fieldset>
-			<legend>Pesquisar Alunos</legend>
+			<legend>Relatorios de entradas e Saidas</legend>
 			
 			<label for="idAluno">ID do Aluno</label> <br>
-			<input type="text" name="idAluno" id="idAluno" placeholder="ID do Aluno"> <br>
-			
-			<label for="nomeAluno">Nome do Aluno</label> <br>
-			<input type="text" name="nomeAluno" id="nomeAluno" placeholder="Nome do Aluno"> <br>
+			<input type="text" name="idAluno" id="idAluno" placeholder="ID do Aluno"> <br><br>
 			
 			<label for="rgAluno">RG do Aluno</label> <br>
-			<input type="text" name="rgAluno" id="rgAluno" placeholder="RG do Aluno"> <br>
+			<input type="text" name="rgAluno" id="rgAluno" placeholder="RG do Aluno"> <br><br>
 			
-			<label for="telefoneAluno">Telefone do Aluno</label> <br>
-			<input type="text" name="telefoneAluno" id="telefoneAluno" placeholder="Telefone do Aluno"> <br> <br>
-			
-			<input style="width: 100px" type="submit" value="Buscar">
+			<input style="width: 175px" type="submit" value="Gerar Relatorio">
 		</fieldset>
 	</form>
 	
@@ -60,33 +54,27 @@ td {
 		<tr>
 			<th>ID</th>
 			<th>NOME</th>
-			<th>RG</th>
 			<th>E-MAIL</th>
-			<th>SITUAÇÃO</th>
-			<th>AÇÕES</th>
+			<th>RG</th>
+			<th>ENTRADAS</th>
+			<th>SAIDAS</th>
 		</tr>
 
 		<tr>
 			<td>001AC</td>
 			<td>Anisberto dos Reis</td>
-			<td>556545</td>
 			<td>anisberto@gmail.com</td>
-			<td>ATIVO</td>
-			<td>
-				<input type="button" value="Editar">
-				<input type="button" value="Excluir">
-			</td>
+			<td>556545</td>
+			<td>15/10/2021 15:30:10</td>
+			<td>15/10/2021 16:30:10</td>
 		</tr>
 		<tr>
 			<td>003AR</td>
 			<td>Anisberto dos Reis</td>
-			<td>556545</td>
 			<td>anisberto@gmail.com</td>
-			<td>INATIVO</td>
-			<td>
-				<input type="button" value="Editar">
-				<input type="button" value="Excluir">
-			</td>
+			<td>556545</td>
+			<td>16/09/2021 15:30:10</td>
+			<td>16/09/2021 14:00:00</td>
 		</tr>
 	</table>
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-BR">
+<meta charset="ISO-8859-1">
+<title>Academia Dev</title>
+</head>
+
+<style>
+table, th, td {
+  border:1px solid black;
+}
+td {
+  text-align:center;
+  vertical-align:middle;
+}
+</style>
+
+<body>
+
+	<header>
+		<img src="./images/Loucademia_Logotipo.png" />
+		<nav>
+			<div>
+				<a href="novoAluno.html"> Novo Aluno </a><br>
+				<a href="pesquisaDeAluno.html"> Pesquisa Aluno </a><br>
+				<a href="controle.html"> Controle de Acesso </a><br>
+				<a href="relatorioEntradaSaida.html"> Relatorio de Entradas e Saidas </a><br>
+				<a href="relatorioSituacao.html"> Relatorios de Situações </a><br>
+			</div>
+		</nav>
+	</header>
+	
+	<h1>Controle de Acesso</h1>
+	<div id="infoMessage">
+		<p>Mensagens de Erro</p>
+	</div>
+	
+	<form action="">
+		<fieldset>
+			<legend>Parametros de Acesso</legend>
+			
+			<label for="idAluno">ID do Aluno</label> <br>
+			<input type="text" name="idAluno" id="idAluno" placeholder="ID do Aluno"> <br><br>
+			
+			<label for="rgAluno">RG do Aluno</label> <br>
+			<input type="text" name="rgAluno" id="rgAluno" placeholder="RG do Aluno"> <br><br>
+			
+			<input style="width: 175px" type="submit" value="Registrar Acesso">
+		</fieldset>
+	</form>
+
+</body>
+</html>
