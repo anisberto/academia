@@ -15,6 +15,14 @@ table, th, td {
 	border: 1px solid black;
 }
 
+body {
+	background-color: #d8e0e6;
+}
+
+nav {
+	background-color: #5898c7 !important;
+}
+
 td {
 	text-align: center;
 	vertical-align: middle;
@@ -24,9 +32,9 @@ td {
 <body>
 
 	<header>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light bg-blue">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#"> <img
+				<a class="navbar-brand" href="heade.html"> <img
 					src="./images/Loucademia_Logotipo.png" width="200px" />
 				</a>
 				<button class="navbar-toggler" type="button"
@@ -72,7 +80,6 @@ td {
 				</div>
 
 				<form action="">
-
 					<label for="idAluno">ID do Aluno</label> <br> <input
 						style="width: 30%" class="form-control" type="text" name="idAluno"
 						id="idAluno" placeholder="ID do Aluno"> <br> <label
@@ -82,8 +89,10 @@ td {
 					<br> <label for="rgAluno">RG do Aluno</label> <br> <input
 						type="text" style="width: 30%" class="form-control" name="rgAluno"
 						id="rgAluno" placeholder="RG do Aluno"> <br> <label
-						for="telefoneAluno">Telefone do Aluno</label> <br> <input
-						style="width: 30%" class="form-control" type="text"
+						for="dddTelefoneAluno">Telefone do Aluno</label> <br> <input
+						style="width: 6%" class="form-control" type="text"
+						name="dddTelefoneAluno" id="dddTelefoneAluno" placeholder="DDD">
+					<input style="width: 30%" class="form-control" type="text"
 						name="telefoneAluno" id="telefoneAluno"
 						placeholder="Telefone do Aluno"> <br> <input
 						class="btn btn-success" style="width: 100px" type="submit"

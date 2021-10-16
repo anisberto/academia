@@ -9,13 +9,22 @@
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
 <title>Academia Dev</title>
+<style>
+nav {
+	background-color: #5898c7 !important;
+}
+
+body {
+	background-color: #d8e0e6;
+}
+</style>
 </head>
 
 <body>
 	<header>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light bg-blue">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#"> <img
+				<a class="navbar-brand" href="heade.html"> <img
 					src="./images/Loucademia_Logotipo.png" width="200px" />
 				</a>
 				<button class="navbar-toggler" type="button"
@@ -52,41 +61,70 @@
 			</div>
 	</header>
 
-	<div class="container">
+	<div class="container" style="padding: 1rem 20% 0 20%">
 		<div class="row">
 			<div class="col-6 col-md-12">
 				<h1>Cadastro de Novos Alunos</h1>
-				<div  class="alert alert-danger" role="alert" id="infoMessage">
+				<div class="alert alert-danger" role="alert" id="infoMessage">
 					<p>Mensagens de Erro</p>
 				</div>
 				<br>
 				<div class="row">
-					<div class="col-sm-6">
+					<div class="col-sm-12">
 						<form action="">
 							<div class="card">
 								<div class="card-body">
 									<h5 class="card-title">Dados Pessoais</h5>
-									<b><label for="nome">Nome:</label></b><br> <input class="form-control"
-										type="text" name="nome" placeholder="Nome do Aluno" id="nome">
-									<br> <b><label for="sexo">Sexo:</label></b><br> <select class="form-select"
+									<b><label for="nome">Nome:</label></b><br> <input
+										class="form-control" type="text" name="nome"
+										placeholder="Nome do Aluno" id="nome"> <br> <b><label
+										for="sexo">Sexo:</label></b><br> <select class="form-select"
 										id="sexo" name="sexo">
 										<option selected>:: Selecione o Sexo ::</option>
 										<option value="m">Masculino</option>
 										<option value="f">Feminino</option>
-									</select><br> <b><label for="rg">RG:</label></b><br> <input class="form-control"
-										type="text" name="nome" placeholder="RG do Aluno" id="rg">
-									<br> <b><label for="dataDeNascimento">Data de
-											Nascimento:</label></b><br> <input type="date" class="form-control
-										name="dataDeNascimento" id="dataDeNascimento">
+									</select><br> <b><label for="rg">RG:</label></b><br> <input
+										class="form-control" type="text" name="nome"
+										placeholder="RG do Aluno" id="rg"> <br> <b><label
+										for="dataDeNascimento">Data de Nascimento:</label></b><br> <input
+										type="date" class="form-control
+										name="
+										dataDeNascimento" id="dataDeNascimento">
 								</div>
 							</div>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-12">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Endereço do Aluno</h5>
+								<b><label for="rua">Rua:</label></b><br> <input type="text"
+									class="form-control" name="rua" placeholder="Rua" id="rua"><br>
+								<b><label for="numero">Numero:</label></b><br> <input
+									type="text" class="form-control" name="numero"
+									placeholder="numero" id="numero"><br> <b><label
+									for="complemento">Complemento:</label></b><br> <input
+									class="form-control" type="text" name="complemento"
+									placeholder="complemento" id="complemento"><br> <b><label
+									for="cidade">Cidade:</label></b><br> <input
+									class="form-control" type="text" name="cidade"
+									placeholder="cidade" id="cidade"><br> <b><label
+									for="estado">Estado:</label></b><br> <select
+									class="form-select" id="estado" name="estado">
+									<option selected>:: Selecione o Estado ::</option>
+									<option value="m">Masculino</option>
+									<option value="f">Feminino</option>
+								</select><br> <b><label for="cep">CEP:</label></b><br> <input
+									class="form-control" type="text" name="cep" placeholder="CEP"
+									id="cep">
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12">
 						<div class="card">
 							<div class="card-body">
 								<h5 class="card-title">Situação do Aluno</h5>
-								<label for="situacao">Situação: </label></b><br> <select class="form-select"
-									id="situacao" name="situacao">
+								<label for="situacao">Situação: </label></b><br> <select
+									class="form-select" id="situacao" name="situacao">
 									<option selected>:: Selecione a Situação ::</option>
 									<option value="ativo">Ativo</option>
 									<option value="inativo">Inativo</option>
@@ -95,44 +133,23 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-6">
-						<div class="card">
-							<div class="card-body">
-								<h5 class="card-title">Endereço do Aluno</h5>
-								<b><label for="rua">Rua:</label></b><br> <input type="text" class="form-control"
-									name="rua" placeholder="Rua" id="rua"><br> <b><label
-									for="numero">Numero:</label></b><br> <input type="text" class="form-control"
-									name="numero" placeholder="numero" id="numero"><br>
-								<b><label for="complemento">Complemento:</label></b><br> <input class="form-control"
-									type="text" name="complemento" placeholder="complemento"
-									id="complemento"><br> <b><label for="cidade">Cidade:</label></b><br>
-								<input class="form-control" type="text" name="cidade" placeholder="cidade"
-									id="cidade"><br> <b><label for="estado">Estado:</label></b><br>
-								<select class="form-select" id="estado" name="estado">
-									<option selected>:: Selecione o Estado ::</option>
-									<option value="m">Masculino</option>
-									<option value="f">Feminino</option>
-								</select><br> <b><label for="cep">CEP:</label></b><br> <input class="form-control"
-									type="text" name="cep" placeholder="CEP" id="cep">
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="card">
+					<div class="col-sm-12" >
+						<div class="card" style="padding-bottom: 3%">
 							<div class="card-body">
 								<h5 class="card-title">Contatos do Aluno</h5>
-								<label for="email">E-mail:</label></b><br> <input class="form-control"
-									type="email" name="email"
+								<label for="email">E-mail:</label></b><br> <input
+									class="form-control" type="email" name="email"
 									placeholder="E-mail" id="email"><br> <b><label
-									for="dddCelular">Numero Celular:</label></b><br> <input class="form-control"
-									style="width: 70px" type="text" name="dddCelular"
-									placeholder="DDD" id="dddCelular"> <input class="form-control"
-									type="tel" name="numeroCelular" placeholder="Numero Celular"
-									id="numeroCelular"><br> <b><label
-									for="dddFixo">Numero Fixo:</label></b><br> <input class="form-control"
-									style="width: 70px" type="text" name="dddFixo"
-									placeholder="DDD" id="dddFixo"> <input type="tel" class="form-control"
-									name="numeroFixo" placeholder="Numero Fixo" id="numeroFixo">
+									for="dddCelular">Numero Celular:</label></b><br> <input
+									class="form-control" style="width: 70px" type="text"
+									name="dddCelular" placeholder="DDD" id="dddCelular"> <input
+									class="form-control" type="tel" name="numeroCelular"
+									placeholder="Numero Celular" id="numeroCelular"><br>
+								<b><label for="dddFixo">Numero Fixo:</label></b><br> <input
+									class="form-control" style="width: 70px" type="text"
+									name="dddFixo" placeholder="DDD" id="dddFixo"> <input
+									type="tel" class="form-control" name="numeroFixo"
+									placeholder="Numero Fixo" id="numeroFixo">
 							</div>
 						</div>
 					</div>

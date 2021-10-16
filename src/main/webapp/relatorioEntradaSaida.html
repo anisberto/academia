@@ -15,6 +15,14 @@ table, th, td {
 	border: 1px solid black;
 }
 
+nav {
+	background-color: #5898c7 !important;
+}
+
+body {
+	background-color: #d8e0e6;
+}
+
 td {
 	text-align: center;
 	vertical-align: middle;
@@ -24,9 +32,9 @@ td {
 <body>
 
 	<header>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light bg-blue">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#"> <img
+				<a class="navbar-brand" href="heade.html"> <img
 					src="./images/Loucademia_Logotipo.png" width="200px" />
 				</a>
 				<button class="navbar-toggler" type="button"
@@ -67,20 +75,22 @@ td {
 		<div class="row">
 			<div class="col-6 col-md-12">
 				<h1>Relatorio de Entradas e Saidas</h1>
-				<div class="alert alert-danger" id="infoMessage">
-					Mensagens de Erro
-				</div>
+				<div class="alert alert-danger" id="infoMessage">Mensagens de
+					Erro</div>
 
 				<form action="" class="row g-3 needs-validation">
-					<label for="idAluno">ID do Aluno</label> <br> <input style="width: 30%"
-						class="form-control" type="text" name="idAluno" id="idAluno"
-						placeholder="ID do Aluno"> <br> <label
-						for="dataInicial">Data Incial</label> <br> <input style="width: 30%"
-						class="form-control" type="date" name="dataInicial"
-						id="dataInicial"> <br> <label for="dataFinal">Data
-						Final</label> <br> <input class="form-control" type="date" style="width: 30%"
-						name="dataFinal" id="dataFinal"> <br> <br> <hr>
-						<input class="btn btn-success btn-sm" style="width: 20%" type="submit" value="Gerar Relatorio">
+					<label for="idAluno">ID do Aluno</label> <br> <input
+						style="width: 30%" class="form-control" type="text" name="idAluno"
+						id="idAluno" placeholder="ID do Aluno"> <br> <label
+						for="dataInicial">Data Incial</label> <br> <input
+						style="width: 30%" class="form-control" type="date"
+						name="dataInicial" id="dataInicial"> <br> <label
+						for="dataFinal">Data Final</label> <br> <input
+						class="form-control" type="date" style="width: 30%"
+						name="dataFinal" id="dataFinal"> <br> <br>
+					<hr>
+					<input class="btn btn-success btn-sm" style="width: 20%"
+						type="submit" value="Gerar Relatorio">
 				</form>
 
 				<br>
