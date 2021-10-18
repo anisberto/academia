@@ -132,6 +132,10 @@ public class Aluno implements Serializable {
 		ATIVO, INATIVO, PENDENTE;
 	}
 
+	public void gerarMatricula() {
+		this.matricula = "0001";
+	}
+
 	@Override
 	public String toString() {
 		return "Aluno [matricula=" + matricula + ", nome=" + nome + ", sexo=" + sexo + ", rg=" + rg

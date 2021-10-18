@@ -2,14 +2,19 @@ package br.com.dev.academia.interfaces.aluno.web;
 
 import java.io.Serializable;
 
+import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
+import br.com.dev.academia.application.service.AlunoService;
 import br.com.dev.academia.domain.aluno.Aluno;
 
 @Named
 @RequestScoped
 public class AlunoBean implements Serializable {
+
+	@EJB
+	private AlunoService alunoService;
 
 	private static final long serialVersionUID = 1L;
 
@@ -38,6 +43,7 @@ public class AlunoBean implements Serializable {
 
 	public String gravar() {
 		System.out.println("Dados do Aluno: \n" + this.aluno.toString());
-		return null;
+		alunoService.create(aluno);
+		return aluno.getEmail();
 	}
 }
