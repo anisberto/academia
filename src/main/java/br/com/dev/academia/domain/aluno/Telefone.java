@@ -15,7 +15,7 @@ public class Telefone implements Serializable {
 	private Integer dddCelular;
 
 	@Column(name = "NUMERO_CELULAR", nullable = true)
-	private Integer numeroCeluar;
+	private Integer numeroCelular;
 
 	@Column(name = "DDD_FIXO", nullable = false)
 	private Integer dddFixo;
@@ -31,12 +31,12 @@ public class Telefone implements Serializable {
 		this.dddCelular = dddCelular;
 	}
 
-	public Integer getNumeroCeluar() {
-		return numeroCeluar;
+	public Integer getnumeroCelular() {
+		return numeroCelular;
 	}
 
-	public void setNumeroCeluar(Integer numeroCeluar) {
-		this.numeroCeluar = numeroCeluar;
+	public void setnumeroCelular(Integer numeroCelular) {
+		this.numeroCelular = numeroCelular;
 	}
 
 	public Integer getDddFixo() {
@@ -57,13 +57,13 @@ public class Telefone implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Telefone [dddCelular=" + dddCelular + ", numeroCeluar=" + numeroCeluar + ", dddFixo=" + dddFixo
+		return "Telefone [dddCelular=" + dddCelular + ", numeroCelular=" + numeroCelular + ", dddFixo=" + dddFixo
 				+ ", numeroFixo=" + numeroFixo + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(dddCelular, dddFixo, numeroCeluar, numeroFixo);
+		return Objects.hash(dddCelular, dddFixo, numeroCelular, numeroFixo);
 	}
 
 	@Override
@@ -76,7 +76,7 @@ public class Telefone implements Serializable {
 			return false;
 		Telefone other = (Telefone) obj;
 		return Objects.equals(dddCelular, other.dddCelular) && Objects.equals(dddFixo, other.dddFixo)
-				&& Objects.equals(numeroCeluar, other.numeroCeluar) && Objects.equals(numeroFixo, other.numeroFixo);
+				&& Objects.equals(numeroCelular, other.numeroCelular) && Objects.equals(numeroFixo, other.numeroFixo);
 	}
 
 }
