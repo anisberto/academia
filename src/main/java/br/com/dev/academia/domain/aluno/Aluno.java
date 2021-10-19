@@ -2,6 +2,7 @@ package br.com.dev.academia.domain.aluno;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.Year;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -10,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import br.com.dev.academia.application.util.StringUtils;
 
 @Entity
 @Table(name = "ALUNO")
@@ -132,8 +135,18 @@ public class Aluno implements Serializable {
 		ATIVO, INATIVO, PENDENTE;
 	}
 
-	public void gerarMatricula() {
-		this.matricula = "0001";
+	public void gerarMatricula(String maxMatricula) {
+		Year year = Year.now();
+
+		if (maxMatricula == null) {
+			maxMatricula = year + StringUtils.leftZeros(0, 4);
+		}
+
+		int sequantial = Integer.parseInt(maxMatricula.substring(4));
+
+		sequantial++;
+
+		this.matricula = year + StringUtils.leftZeros(sequantial, 4);
 	}
 
 	@Override

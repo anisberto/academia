@@ -17,7 +17,7 @@ public class AlunoService {
 	public Aluno create(Aluno aluno) {
 
 		try {
-			aluno.gerarMatricula();
+			aluno.gerarMatricula(alunoRepository.getMaxMatriculaAno());
 			return alunoRepository.create(aluno);
 		} catch (Exception e) {
 			e.printStackTrace();

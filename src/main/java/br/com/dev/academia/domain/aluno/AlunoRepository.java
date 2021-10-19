@@ -1,5 +1,6 @@
 package br.com.dev.academia.domain.aluno;
 
+import java.time.Year;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -55,9 +56,15 @@ public class AlunoRepository {
 		Aluno alunoSearch = entityManager.find(Aluno.class, matricula);
 		if (alunoSearch == null)
 			throw new Exception("Não Foi encontrado este aluno");
-		
+
 		entityManager.remove(alunoSearch);
 
+	}
+
+	public String getMaxMatriculaAno() {
+		return entityManager
+				.createQuery("SELECT MAX(a.matricula) FROM Aluno a WHERE a.matricula LIKE :ano", String.class)
+				.setParameter("ano", Year.now() + "%").getSingleResult();
 	}
 
 }
