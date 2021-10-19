@@ -18,6 +18,9 @@ public class AlunoBean implements Serializable {
 
 	private String matricula;
 
+	private boolean render = false;
+
+
 	private Aluno aluno = new Aluno();
 	private String titulo = "Cadastro de Aluno";
 
@@ -45,14 +48,22 @@ public class AlunoBean implements Serializable {
 		this.matricula = matricula;
 	}
 
+	public boolean isRender() {
+		return render;
+	}
+
+	public void setRender(boolean render) {
+		this.render = render;
+	}
+
 	public void carregar() {
 		if (this.matricula != null) {
-			System.out.println("ITem Parametro:... " +this.matricula);
+			System.out.println("ITem Parametro:... " + this.matricula);
 			try {
 				this.aluno = alunoService.findByMatricula(this.matricula);
 				this.titulo = "Atualizando Aluno";
 			} catch (Exception e) {
-				//System.out.println(e.getMessage());
+				// System.out.println(e.getMessage());
 			}
 
 		}

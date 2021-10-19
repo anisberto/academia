@@ -16,6 +16,11 @@
 		</f:metadata>
 
 		<ui:define name="conteudo">
+			<h:panelGroup rendered="#{!facesContext.messageList.isEmpty()}">
+				<div id="infoMessage">
+					Mensagens de erro		
+				</div>
+			</h:panelGroup>
 			<form jsf:id="form">
 				<input type="hidden" jsf:value="#{alunoBean.aluno.matricula}" />
 				<fieldset>
