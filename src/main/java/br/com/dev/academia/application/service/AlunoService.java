@@ -16,52 +16,38 @@ public class AlunoService {
 
 	public Aluno create(Aluno aluno) {
 
-		try {
-			aluno.gerarMatricula(alunoRepository.getMaxMatriculaAno());
-			return alunoRepository.create(aluno);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return null;
-	}
-
-	public Aluno update(Aluno aluno) throws Exception {
-		try {
-			return alunoRepository.update(aluno);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return null;
-	}
-
-	public Aluno findByMatricula(String matricula) throws Exception {
-		try {
-			return alunoRepository.findByMatricula(matricula);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return null;
-	}
-
-	public List<Aluno> read() throws Exception {
-		try {
-			return alunoRepository.read();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return null;
+		aluno.gerarMatricula(alunoRepository.getMaxMatriculaAno());
+		return alunoRepository.create(aluno);
 
 	}
 
-	public void delete(String matricula) throws Exception {
-		try {
-			alunoRepository.delete(matricula);
-		} catch (Exception e) {
-			e.printStackTrace();
+	public Aluno update(Aluno aluno) {
+
+		return alunoRepository.update(aluno);
+
+	}
+
+	public Aluno findByMatricula(String matricula) {
+
+		return alunoRepository.findByMatricula(matricula);
+
+	}
+
+	public List<Aluno> read() {
+		return alunoRepository.read();
+	}
+
+	public void delete(String matricula) {
+
+		alunoRepository.delete(matricula);
+	}
+
+	public void createOrUpdate(Aluno aluno) {
+
+		if (aluno.getMatricula().isEmpty()) {
+			create(aluno);
+		} else {
+			update(aluno);
 		}
 	}
 

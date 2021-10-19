@@ -16,7 +16,7 @@ public class AlunoBean implements Serializable {
 	@EJB
 	private AlunoService alunoService;
 
-	private static final long serialVersionUID = 1L;
+	private String matricula;
 
 	private Aluno aluno = new Aluno();
 	private String titulo = "Cadastro de Aluno";
@@ -37,13 +37,30 @@ public class AlunoBean implements Serializable {
 		this.titulo = titulo;
 	}
 
+	public String getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
+	}
+
 	public void carregar() {
-		System.out.println("Estou carregando.....");
+		if (this.matricula != null) {
+			System.out.println("ITem Parametro:... " +this.matricula);
+			try {
+				this.aluno = alunoService.findByMatricula(this.matricula);
+				this.titulo = "Atualizando Aluno";
+			} catch (Exception e) {
+				//System.out.println(e.getMessage());
+			}
+
+		}
 	}
 
 	public String gravar() {
 		System.out.println("Dados do Aluno: \n" + this.aluno.toString());
-		alunoService.create(aluno);
+		alunoService.createOrUpdate(aluno);
 		return aluno.getEmail();
 	}
 }

@@ -8,15 +8,16 @@
 	lang="pt-br">
 	
 	<ui:composition template="layout.xhtml">
-		<ui:param name="title" value="#{alunoBean.titulo}" />
+		
 		<f:metadata>
+			<ui:param name="title" value="#{alunoBean.titulo}" />
+			<f:viewParam name="matricula" value="#{alunoBean.matricula}"/>
 			<f:viewAction action="#{alunoBean.carregar}" />
-			<!-- f:viewParam name="matricula" value="#{alunoBean.matricula}" />
-				<input type="hidden" jsf:value="#{alunoBean.aluno.matricula}" / -->
 		</f:metadata>
+
 		<ui:define name="conteudo">
 			<form jsf:id="form">
-				
+				<input type="hidden" jsf:value="#{alunoBean.aluno.matricula}" />
 				<fieldset>
 					<legend>Dados pessoais</legend>
 					<label for="nome">Nome</label><br />
