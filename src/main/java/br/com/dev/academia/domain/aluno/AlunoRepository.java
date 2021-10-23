@@ -43,9 +43,8 @@ public class AlunoRepository {
 	}
 
 	public void delete(String matricula) {
-		Aluno alunoSearch = entityManager.find(Aluno.class, matricula);
 
-		entityManager.remove(alunoSearch);
+		entityManager.remove(findByMatricula(matricula));
 
 	}
 

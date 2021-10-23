@@ -10,9 +10,9 @@
 	<ui:composition template="layout.xhtml">
 	<ui:param name="title" value="Pesquisa de aluno" />
 		<ui:define name="conteudo">
-			<f:metadata>
+			<!--   f:metadata>
 				<f:viewAction action="#{pesquisaAlunoBean.check}" />
-			</f:metadata>
+			</f:metadata -->
 			
 			<form jsf:id="form">
 				<fieldset>
@@ -38,7 +38,6 @@
 							<th>Nome</th>
 							<th>RG</th>
 							<th>E-mail</th>
-							<th>Telefone</th>
 							<th>Situação</th>
 							<th>Ações</th>
 						</tr>
@@ -48,14 +47,10 @@
 								<td>#{a.nome}</td>
 								<td>#{a.rg}</td>
 								<td>#{a.email}</td>
-								<td>
-									#{dataBean.formatTelefone(a.telefone.dddCelular, a.telefone.numeroCelular)}<br />
-									#{dataBean.formatTelefone(a.telefone.dddFixo, a.telefone.numeroFixo)}
-								</td>
 								<td>#{a.situacao}</td>
 								<td>
-									<input type="button" value="Editar" jsf:outcome="dadosAluno?matricula=#{a.matricula}" />&#160;
-									<input type="submit" value="Excluir" onclick="return confirm('Deseja excluir o aluno #{a.matricula}?');" jsf:action="#{pesquisaAlunoBean.excluir(a.matricula)}" />
+									<input type="button" value="Editar" jsf:outcome="dadosAluno?matricula=#{a.matricula}"/>&#160;
+									<input type="submit" onclick="return confirm('Deseja Deletar? #{a.matricula}')" value="Excluir" jsf:action="#{pesquisaAlunoBean.excluir(a.matricula)}"/>
 								</td>
 							</tr>
 						</ui:repeat>

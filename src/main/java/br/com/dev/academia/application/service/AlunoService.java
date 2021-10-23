@@ -1,5 +1,6 @@
 package br.com.dev.academia.application.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -35,6 +36,12 @@ public class AlunoService {
 
 	public List<Aluno> read() {
 		return alunoRepository.read();
+	}
+
+	public List<Aluno> listAlunos(String matricula, String nome, Integer rg, Integer telefone) {
+		List<Aluno> lista = new ArrayList<Aluno>();
+		lista.add(alunoRepository.findByMatricula(matricula));
+		return lista;
 	}
 
 	public void delete(String matricula) {
