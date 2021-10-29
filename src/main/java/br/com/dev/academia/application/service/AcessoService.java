@@ -5,6 +5,7 @@ import javax.ejb.Stateless;
 
 import br.com.dev.academia.application.util.StringUtils;
 import br.com.dev.academia.application.util.ValidationException;
+import br.com.dev.academia.domain.acesso.Acesso;
 import br.com.dev.academia.domain.acesso.AcessoRepository;
 import br.com.dev.academia.domain.acesso.TipoAcesso;
 import br.com.dev.academia.domain.aluno.Aluno;
@@ -29,14 +30,24 @@ public class AcessoService {
 
 		if (StringUtils.isEmpty(matricula)) {
 			alunoRegistro = alunoRepository.findByRg(rg);
-			acesso = TipoAcesso.ENTRADA;
 		} else {
 			alunoRegistro = alunoRepository.findByMatricula(matricula);
-			acesso = TipoAcesso.ENTRADA;
 		}
-		
-		if(alunoRegistro == null) {
+
+		if (alunoRegistro == null) {
 			throw new ValidationException("O Aluno não foi encotrado!\nVerifique os parametros de busca.");
+		}
+
+		Acesso acessoUltimo = acessoRepository.ultimoAcesso(alunoRegistro);
+
+		if (acessoUltimo == null || acessoUltimo.isEntradasSaidasPreenchidas()) {
+			acessoUltimo = new Acesso();
+			acessoUltimo.setAluno(alunoRegistro);
+			acesso = acessoUltimo.registrarAcesso();
+			acessoRepository.store(acessoUltimo);
+			
+		}else {
+			acesso = acessoUltimo.registrarAcesso();
 		}
 
 		return acesso;

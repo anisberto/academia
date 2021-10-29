@@ -35,11 +35,14 @@ public class AlunoRepository {
 	}
 
 	public Aluno findByRg(Integer rg) {
-		Aluno alunoSearch = entityManager.createQuery("SELECT a FROM Aluno a WHERE a.rg = :rg", Aluno.class)
-				.setParameter("rg", rg)
-				.getSingleResult();
+		try {
+			Aluno alunoSearch = entityManager.createQuery("SELECT a FROM Aluno a WHERE a.rg = :rg", Aluno.class)
+					.setParameter("rg", rg).getSingleResult();
 
-		return alunoSearch;
+			return alunoSearch;
+		} catch (Exception e) {
+			return null;
+		}
 	}
 
 	public List<Aluno> read() {

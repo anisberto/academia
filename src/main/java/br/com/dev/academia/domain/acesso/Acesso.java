@@ -17,13 +17,13 @@ import br.com.dev.academia.domain.aluno.Aluno;
 
 @Entity
 @Table(name = "ENTRADAS_SAIDAS")
-public class Acesso implements Serializable{
+public class Acesso implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID", nullable = false)
 	private Integer id;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "ALUNO_ID", nullable = false)
 	private Aluno aluno;
@@ -33,6 +33,31 @@ public class Acesso implements Serializable{
 
 	@Column(name = "SAIDA", nullable = true)
 	private LocalDateTime saida;
+
+	public boolean isEntradasSaidasPreenchidas() {
+		if (entrada != null & saida != null) {
+			return true;
+		}
+		return false;
+	}
+
+	public TipoAcesso registrarAcesso() {
+		LocalDateTime dataHoraAtual = LocalDateTime.now();
+		TipoAcesso tipodeAcesso;
+
+		if (entrada == null) {
+			entrada = dataHoraAtual;
+			tipodeAcesso = TipoAcesso.ENTRADA;
+
+		} else if (saida == null) {
+			saida = dataHoraAtual;
+			tipodeAcesso = TipoAcesso.SAIDA;
+
+		} else {
+			tipodeAcesso = null;
+		}
+		return tipodeAcesso;
+	}
 
 	public Aluno getAluno() {
 		return aluno;
