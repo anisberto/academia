@@ -34,6 +34,14 @@ public class AlunoRepository {
 		return alunoSearch;
 	}
 
+	public Aluno findByRg(Integer rg) {
+		Aluno alunoSearch = entityManager.createQuery("SELECT a FROM Aluno a WHERE a.rg = :rg", Aluno.class)
+				.setParameter("rg", rg)
+				.getSingleResult();
+
+		return alunoSearch;
+	}
+
 	public List<Aluno> read() {
 		List<Aluno> listAluno = entityManager.createQuery("SELECT a FROM Aluno a ORDER BY a.nome", Aluno.class)
 				.getResultList();
@@ -43,9 +51,7 @@ public class AlunoRepository {
 	}
 
 	public void delete(String matricula) {
-
 		entityManager.remove(findByMatricula(matricula));
-
 	}
 
 	public String getMaxMatriculaAno() {
