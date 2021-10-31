@@ -20,7 +20,7 @@ public class DataBean implements Serializable {
 
 	@EJB
 	private DataService dataService;
-	
+
 	public Sexo[] getSexos() {
 		return dataService.getSexos();
 	}
@@ -31,5 +31,10 @@ public class DataBean implements Serializable {
 
 	public List<Estado> getEstados() {
 		return dataService.listEstados();
+	}
+
+	public String formatTelefone(Integer ddd, Integer telefone) {
+		String numeroFormatado = String.format("( %s ) %s", ddd, telefone);
+		return numeroFormatado;
 	}
 }

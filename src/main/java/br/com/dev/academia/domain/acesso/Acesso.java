@@ -1,6 +1,7 @@
 package br.com.dev.academia.domain.acesso;
 
 import java.io.Serializable;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -39,6 +40,15 @@ public class Acesso implements Serializable {
 			return true;
 		}
 		return false;
+	}
+
+	public String calcularDuracao() {
+		if (entrada == null || saida == null) {
+			return null;
+		}
+		Duration tempoDeAcesso = Duration.between(entrada, saida);
+
+		return String.format("%02d:%02d", tempoDeAcesso.toHours(), tempoDeAcesso.toMinutes());
 	}
 
 	public TipoAcesso registrarAcesso() {

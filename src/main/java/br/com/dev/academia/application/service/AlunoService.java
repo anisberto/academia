@@ -1,12 +1,19 @@
 package br.com.dev.academia.application.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
+import org.picketbox.util.StringUtil;
+
+import br.com.dev.academia.application.util.Validation;
+import br.com.dev.academia.application.util.ValidationException;
+import br.com.dev.academia.domain.acesso.Acesso;
 import br.com.dev.academia.domain.aluno.Aluno;
+import br.com.dev.academia.domain.aluno.Aluno.Situacao;
 import br.com.dev.academia.domain.aluno.AlunoRepository;
 
 @Stateless
@@ -44,6 +51,11 @@ public class AlunoService {
 		return lista;
 	}
 
+	public List<Aluno> getAlunoSituacao(Situacao situacao) {
+		Validation.assertNotEmpty(situacao);
+		return alunoRepository.getAlunosBySituacao(situacao);
+	}
+
 	public void delete(String matricula) {
 
 		alunoRepository.delete(matricula);
@@ -58,4 +70,10 @@ public class AlunoService {
 		}
 	}
 
+	public List<Acesso> listAcessosAluno(String matricula, LocalDate dataInicial, LocalDate dataFinal) {
+		if (StringUtil.isNotNull(matricula) && dataInicial == null && dataFinal == null) {
+			throw new ValidationException("Informe pelo menos dois criterios para busca!");
+		}
+		return alunoRepository.listAcessosAluno(matricula, dataInicial, dataFinal);
+	}
 }
