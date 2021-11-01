@@ -2,9 +2,12 @@ package br.com.dev.academia.interfaces.aluno.web;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.annotation.RequestParameterMap;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.com.dev.academia.application.service.AlunoService;
@@ -16,6 +19,10 @@ public class PesquisaAlunoBean implements Serializable {
 
 	@EJB
 	private AlunoService alunoService;
+
+	@Inject
+	@RequestParameterMap
+	private Map<String, String> requestParam;;
 
 	private Aluno aluno = new Aluno();
 	private String matricula;
@@ -36,8 +43,15 @@ public class PesquisaAlunoBean implements Serializable {
 		return pesquisar();
 	}
 
-	public String check() {
-		return null;
+	public void check() {
+		String parametro = requestParam.get("clear");
+		if (parametro != null && Boolean.valueOf(parametro)) {
+			matricula = null;
+			nome = null;
+			rg = null;
+			telefone = null;
+			alunos = null;
+		}
 	}
 
 	public Aluno getAluno() {
