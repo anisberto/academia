@@ -71,9 +71,9 @@ public class AlunoService {
 	}
 
 	public List<Acesso> listAcessosAluno(String matricula, LocalDate dataInicial, LocalDate dataFinal) {
-		if (StringUtil.isNotNull(matricula) && dataInicial == null && dataFinal == null) {
-			throw new ValidationException("Informe pelo menos dois criterios para busca!");
-		}
+//		if (StringUtil.isNotNull(matricula) && dataInicial == null && dataFinal == null) {
+//			throw new ValidationException("Informe pelo menos dois criterios para busca!");
+//		}
 		return alunoRepository.listAcessosAluno(matricula, dataInicial, dataFinal);
 	}
 }
